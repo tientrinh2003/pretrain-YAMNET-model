@@ -1,0 +1,64 @@
+# Virtual Environment
+.venv/
+venv/
+env/
+ENV/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large dataset files - DO NOT push to GitHub
+ESC-50-master/
+LibriSpeech/
+musan/
+UrbanSound8K/
+yamnet_dataset/
+
+# Large model files - DO NOT push to GitHub  
+*.h5
+yamnet_sns_savedmodel/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+test_model_quality.py
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Environment variables
+.env
