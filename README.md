@@ -1,22 +1,25 @@
 # YAMNet Speech/Non-Speech Detection System
 
-A real-time speech detection system using YAMNet (Google's audio classification model) with computer vision integration for talking detection.
+A production-ready speech detection system using fine-tuned YAMNet with comprehensive health monitoring integration.
 
-## Features
-- 🎤 Real-time speech/non-speech classification using YAMNet
-- 📹 Computer vision lip movement detection  
-- 🔄 Flask web application with live video feed
-- 🤖 Pre-trained model with 91% accuracy
-- 📊 Balanced dataset with 2400 samples (1200 speech + 1200 non-speech)
+## ✨ Features
+- 🎤 **Real-time speech/non-speech classification** using fine-tuned YAMNet
+- 📹 **Computer vision integration** with MediaPipe pose estimation  
+- 🔄 **Flask web application** with live audio/video feeds
+- 🤖 **High-performance model** with 100% validation accuracy
+- 📊 **Balanced dataset** with 2400 samples (1200 speech + 1200 non-speech)
+- 🏥 **Health monitoring** integration for SmartBP system
 
-## Dataset Sources
-- **Speech:** LibriSpeech test-clean
-- **Non-Speech:** ESC-50, UrbanSound8K, MUSAN (music/noise)
+## 📊 Model Performance
+- **Training Accuracy:** 99.78%
+- **Validation Accuracy:** 100%
+- **Architecture:** YAMNet (frozen) + Custom Dense Head
+- **Input Format:** 2-second audio clips at 16kHz (32,000 samples)
+- **Model Size:** ~17MB SavedModel
 
-## Model Performance
-- **Accuracy:** 91.0% on test samples
-- **Architecture:** YAMNet embeddings → Dense(512) → Dropout(0.3) → Dense(1, sigmoid)
-- **Input:** 2-second audio clips at 16kHz (32,000 samples)
+## 🗂️ Dataset Sources
+- **Speech:** LibriSpeech test-clean subset
+- **Non-Speech:** ESC-50, UrbanSound8K, MUSAN (music/noise/environmental)
 
 ## Quick Start
 

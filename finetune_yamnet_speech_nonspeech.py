@@ -222,7 +222,11 @@ else:
 head_model.compile(
     optimizer=optimizer,
     loss="binary_crossentropy",
-    metrics=["accuracy", "precision", "recall"]
+    metrics=[
+        tf.keras.metrics.BinaryAccuracy(name="accuracy"),
+        tf.keras.metrics.Precision(name="precision"),
+        tf.keras.metrics.Recall(name="recall")
+    ]
 )
 
 logger.info("Model architecture:")
@@ -242,13 +246,14 @@ early_stop = tf.keras.callbacks.EarlyStopping(
 callbacks.append(early_stop)
 
 # Model checkpoint
-checkpoint_path = f"models/best_{args.model_name}.keras"
+checkpoint_path = f"models/best_{args.model_name}.h5"
 os.makedirs("models", exist_ok=True)
 checkpoint = tf.keras.callbacks.ModelCheckpoint(
     checkpoint_path,
     monitor="val_loss",
     save_best_only=True,
-    verbose=1
+    verbose=1,
+    save_format='h5'
 )
 callbacks.append(checkpoint)
 
@@ -433,8 +438,8 @@ test_metrics = evaluate_model_comprehensive(head_model, X_test, y_test)
 
 # ========= Enhanced Model Saving =========
 # Save head classifier
-HEAD_PATH = f"models/{args.model_name}_head.keras"
-head_model.save(HEAD_PATH)
+HEAD_PATH = f"models/{args.model_name}_head.h5"
+head_model.save(HEAD_PATH, save_format='h5')
 logger.info(f"[✓] Saved head classifier to {HEAD_PATH}")
 
 # Save training history

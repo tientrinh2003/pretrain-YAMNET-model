@@ -18,6 +18,38 @@ eggs/
 .eggs/
 lib/
 lib64/
+
+# Temporary files and logs
+*.log
+data_preparation.log
+training.log
+
+# Test and evaluation scripts (temporary)
+*test*.py
+*evaluation*.py
+*analysis*.py
+comprehensive_*.py
+final_*.py
+quick_*.py
+
+# Visualization files
+*.png
+*.jpg
+*.jpeg
+*.gif
+training_plots.*
+evaluation_plots.*
+training_analysis.*
+
+# Documentation (temporary reports)
+*_REPORT.md
+*_VERIFICATION*.md
+QUALITY_*.md
+FINAL_*.md
+
+# Model artifacts (keep only essential)
+# models/ - keep this
+# yamnet_dataset/ - keep this
 parts/
 sdist/
 var/
