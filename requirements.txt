@@ -1,8 +1,32 @@
-tensorflow>=2.12
+# SmartBP Health Monitor - Requirements
+# Optimized for Raspberry Pi 5 ARM64
+
+# Core dependencies
+numpy>=1.21.0,<1.25.0
+opencv-python-headless>=4.5.0,<4.8.0
+
+# TensorFlow Lite for ARM64
+--extra-index-url https://www.piwheels.org/simple
+tensorflow>=2.10.0,<2.14.0
 tensorflow_hub>=0.15.0
-numpy>=1.23
-scikit-learn>=1.1
-sounddevice>=0.4.6
-librosa>=0.10.1
+
+# Audio processing
+sounddevice>=0.4.4
+librosa>=0.9.0,<0.11.0
 soundfile>=0.12.1
+
+# Web framework
+flask>=2.0.0,<3.0.0
+flask-cors>=3.0.0,<5.0.0
+
+# Machine learning
+scikit-learn>=1.1
+
+# Utilities
+requests>=2.25.0
+pillow>=8.0.0,<10.0.0
+scipy>=1.7.0,<1.12.0
 tqdm>=4.66.0
+
+# Optional: Better performance
+numba>=0.56.0  # If available for ARM64
