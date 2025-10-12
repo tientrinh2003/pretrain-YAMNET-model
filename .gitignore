@@ -40,17 +40,33 @@ Thumbs.db
 
 # Large dataset files - DO NOT push to GitHub
 ESC-50-master/
+ESC-50.zip
 LibriSpeech/
+test-clean.tar.gz
 musan/
 UrbanSound8K/
 yamnet_dataset/
 
-# Large model files - DO NOT push to GitHub  
+# Large model files and training artifacts - DO NOT push to GitHub  
+models/
 *.h5
+*.keras
 yamnet_sns_savedmodel/
+yamnet_*_savedmodel/
+yamnet_*.zip
+*_complete.zip
+
+# Training outputs
+training_plots.png
+evaluation_plots.png
+*.json
 
 # Logs
 *.log
+training.log
+
+# TensorBoard logs
+logs/
 
 # Temporary files
 *.tmp
@@ -62,3 +78,11 @@ test_model_quality.py
 
 # Environment variables
 .env
+
+# Audio processing temporary files
+*.wav
+*.mp3
+*.flac
+
+# Numpy arrays (cached embeddings)
+*.npy
