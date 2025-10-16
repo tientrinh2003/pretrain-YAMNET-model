@@ -37,7 +37,7 @@ pip install -r requirements.txt
 
 ### 2. Run Application
 ```bash
-python app.py
+python smartbp_health_monitor.py
 ```
 Open browser: `http://localhost:5000`
 
@@ -49,7 +49,15 @@ The repository includes:
 
 ## Advanced Usage
 
-### Prepare New Dataset
+### Complete Pipeline
+```bash
+python run_pipeline.py              # Run data preparation + training
+python run_pipeline.py --step data  # Data preparation only
+python run_pipeline.py --step train # Training only
+```
+
+### Manual Steps
+#### Prepare New Dataset
 ```bash
 python prepare_yamnet_speech_nonspeech.py
 ```
@@ -59,22 +67,17 @@ This downloads and processes:
 - UrbanSound8K (urban sounds)
 - MUSAN (music/noise)
 
-### Retrain Model
+#### Retrain Model
 ```bash
 python finetune_yamnet_speech_nonspeech.py
 ```
 
-### Test Model Quality
-```bash
-python test_model_quality.py
-```
-
 ## File Structure
 ```
-├── app.py                                    # Flask web application
+├── smartbp_health_monitor.py                 # Main Flask application with YAMNet
 ├── prepare_yamnet_speech_nonspeech.py        # Dataset preparation
 ├── finetune_yamnet_speech_nonspeech.py       # Model training
-├── test_model_quality.py                     # Model evaluation
+├── run_pipeline.py                           # Complete pipeline runner
 ├── requirements.txt                          # Dependencies
 ├── classifier_on_emb.h5                      # Trained classifier
 ├── yamnet_sns_savedmodel/                    # End-to-end SavedModel
