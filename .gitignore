@@ -118,3 +118,13 @@ test_model_quality.py
 
 # Numpy arrays (cached embeddings)
 *.npy
+
+# Added exclusions for GitHub
+.github/
+.gitlab/
+*.key
+*.pem
+*.crt
+*.p12
+*.pfx
+secrets/
